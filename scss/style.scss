@@ -101,40 +101,41 @@ html {
 }
 
 .clock {
-   border: solid 0.25rem var(--color-2);
-   box-shadow: inset 0 0.375rem 1.125rem rgba($color: #333, $alpha: 0.5);
-   width: 18.75rem;
-   height: 18.75rem;
-   margin: 1.25rem;
-   border-radius: 100%;
+   width: 300px;
+   height: 300px;
+   width: 75vh;
+   height: 75vh;
+   aspect-ratio: 1/1;
    position: relative;
-   background-color: var(--color-1);
-   filter: drop-shadow(0rem 0.5rem 0.625rem rgba(36, 36, 36, 0.584));
-   transition: all 0.3s linear;
+   margin: 20px;
 
-   &::after {
-      content: "";
-      width: calc(100% - 0.5rem);
-      height: calc(100% - 0.5rem);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: solid 0.25rem rgb(205, 205, 205);
-      box-shadow: inset 0 0 0.0625rem rgba(36, 36, 36, 0.61);
+   &__inner {
+      border: solid 4px var(--color-2);
+      box-shadow: inset 0 6px 18px rgba($color: #333, $alpha: 0.5);
+      width: 100%;
+      height: 100%;
       border-radius: 100%;
+      position: abs($number: 0);
+      background-color: var(--color-1);
+      filter: drop-shadow(0 8px 10px rgba(36, 36, 36, 0.584));
+      //transition: all 0.3s linear;
    }
 }
 
 .dots {
    position: absolute;
-   width: calc(100% - 6.625rem);
-   height: calc(100% - 6.625rem);
-   top: 3.3125rem;
-   left: 3.3125rem;
-   right: 3.3125rem;
-   bottom: 3.3125rem;
+   /*    width: calc(100% - 106px);
+   height: calc(100% - 106px); */
+   width: 63.7%;
+   height: 63.7%;
+   /*    top: 53px;
+   left: 53px;
+   right: 53px;
+   bottom: 53px; */
+   top: 18.2%;
+   left: 18.2%;
+   right: 18.2%;
+   bottom: 18.2%;
    div {
       position: absolute;
       top: 0;
@@ -144,12 +145,15 @@ html {
       width: 50%;
       height: 50%;
       //background: rgba(208, 208, 208, 0.01);
-      //border: solid .063rem rgba(143, 143, 143, 0.05);
+      //border: solid 1.008px rgba(143, 143, 143, 0.05);
       transform-origin: 100% 100%;
       transform: rotate(45deg);
       &:after {
-         width: 0.109375rem;
-         height: 0.109375rem;
+         /* 
+         width: 1.75px;
+         height: 1.75px; */
+         width: 1.75%;
+         height: 1.75%;
          content: "";
          background: var(--color-2);
          position: absolute;
@@ -160,8 +164,8 @@ html {
       }
       &:nth-child(5n + 1) {
          &:after {
-            width: 0.21875rem;
-            height: 0.21875rem;
+            width: 3%;
+            height: 3%;
          }
       }
    }
@@ -169,13 +173,15 @@ html {
 
 .hours-wrapper {
    position: absolute;
-   width: calc(100% - 7.25rem);
-   height: calc(100% - 7.25rem);
-   top: 3.625rem;
-   left: 3.625rem;
-   right: 3.625rem;
-   bottom: 3.625rem;
-   font-size: 1.75rem;
+   /*    width: calc(100% - 116px);
+   height: calc(100% - 116px); */
+   width: 60.3%;
+   height: 60.3%;
+   top: 20%;
+   left: 20%;
+   right: 20%;
+   bottom: 20%;
+   font-size: 1.75em;
    font-weight: 200;
    line-height: 50%;
    color: var(--color-2);
@@ -189,27 +195,33 @@ html {
       height: 50%;
       transform-origin: 100% 100%;
       //transform: rotate(105deg);
-      //border: solid .063rem rgba(0, 128, 0, 0.269);
+      //border: solid 1.008px rgba(0, 128, 0, 0.269);
 
       p {
          //transform: rotate(-105deg);
          transform-origin: 50% 50%;
          display: inline-block;
 
-         //border: solid .063rem rgba(0, 255, 255, 0.434);
+         //border: solid 1.008px rgba(0, 255, 255, 0.434);
       }
    }
 }
 
 .arrows {
    position: absolute;
-   width: calc(100% - 5rem);
-   height: calc(100% - 5rem);
-   top: 2.5rem;
-   left: 2.5rem;
-   right: 2.5rem;
-   bottom: 2.5rem;
-   filter: drop-shadow(0rem 0.125rem 0.1875rem rgba($color: #333, $alpha: 0.5));
+   /* width: calc(100% - 80px);
+   height: calc(100% - 80px); */
+   width: 72.6%;
+   height: 72.6%;
+   /*   top: 40px;
+   left: 40px;
+   right: 40px;
+   bottom: 40px; */
+   top: 13.7%;
+   left: 13.7%;
+   right: 13.7%;
+   bottom: 13.7%;
+   filter: drop-shadow(0px 2px 3px rgba($color: #333, $alpha: 0.5));
    border-radius: 100%;
    &:after {
       content: "";
@@ -220,8 +232,8 @@ html {
       right: 0;
       bottom: 0;
       background: var(--color-2);
-      width: 0.625rem;
-      height: 0.625rem;
+      width: 10px;
+      height: 10px;
       border-radius: 100%;
    }
 }
@@ -236,17 +248,17 @@ html {
    background: var(--color-2);
 
    &-hour {
-      width: 0.1875rem;
+      width: 0.75%;
       height: 35%;
       transform: rotate(125deg);
    }
    &-minute {
-      width: 0.1875rem;
+      width: 0.75%;
       height: 48%;
       transform: rotate(225deg);
    }
    &-second {
-      width: 0.09375rem;
+      width: 0.375%;
       height: 50%;
       transform: rotate(325deg);
    }
@@ -257,9 +269,28 @@ html {
    left: 0;
    right: 0;
    top: 65%;
-   font-size: 1.375rem;
+   font-size: 1.25em;
    font-weight: 700;
    color: var(--color-2);
    text-align: center;
    font-family: "Italianno", cursive;
+}
+
+@media (max-width: 1200px) {
+   .hours-wrapper {
+      font-size: 2em;
+   }
+}
+
+@media (max-width: 575px) {
+   .hours-wrapper {
+      font-size: 3em;
+   }
+   .clock {
+      width: 80vw;
+      height: 80vw;
+   }
+   .city {
+      font-size: 2.25rem;
+   }
 }
