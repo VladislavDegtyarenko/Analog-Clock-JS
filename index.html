@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="css/style.min.css" />
-	</head>
-	<body>
-		<div class="container">
-			<div class="clock">
-				<div class="dots"></div>
-				<div class="hours-wrapper"></div>
-				<div class="arrows">
-					<div class="arrow arrow-hour"></div>
-					<div class="arrow arrow-minute"></div>
-					<div class="arrow arrow-second"></div>
-				</div>
-				<div class="date-text"></div>
-			</div>
-		</div>
-		<script src="script.js"></script>
-	</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Analog Clock</title>
+      <link rel="stylesheet" href="css/style.min.css" />
+   </head>
+   <body>
+      <div class="container">
+         <div class="background">
+            <img src="pexels-scott-webb-2824173-compressed.jpg" alt="" />
+         </div>
+         <div class="mode">
+            <span></span>
+         </div>
+         <div class="clock" data-city="Velyka Novosilka" data-utc-offset="3">
+            <div class="dots"></div>
+            <div class="hours-wrapper"></div>
+            <div class="arrows">
+               <div class="arrow arrow-hour"></div>
+               <div class="arrow arrow-minute"></div>
+               <div class="arrow arrow-second"></div>
+            </div>
+            <div class="city"></div>
+         </div>
+      </div>
+      <script src="script.js"></script>
+   </body>
 </html>

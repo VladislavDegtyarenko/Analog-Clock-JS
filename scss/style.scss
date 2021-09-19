@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
 
+:root {
+   --color-1: #fff;
+   --color-2: #242424;
+}
+
 * {
    box-sizing: border-box;
    margin: 0;
@@ -10,6 +15,7 @@
 
 html {
    font-size: 16px;
+   font-size: 2.5vw;
 }
 
 .container {
@@ -19,41 +25,116 @@ html {
    height: 100vh;
    width: 100vw;
    overflow: hidden;
-   background: url("../pexels-scott-webb-2824173-compressed.jpg") center top/cover no-repeat;
+   position: relative;
+   background-color: rgb(3, 5, 8);
+}
+
+.background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   transition: all 0.3s linear;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+   &.dark {
+      opacity: 0.15;
+   }
+}
+
+.mode {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   margin: auto;
+   width: 42px;
+   height: 22px;
+   background: #f1f2f4;
+   border-radius: 20px;
+   cursor: pointer;
+   &:after {
+      content: "☀️";
+      position: absolute;
+      top: 0;
+      left: 4px;
+      font-size: 14px;
+      height: 22px;
+      line-height: 23px;
+      text-align: center;
+      transition: all 0.3s ease;
+      @media screen and (max-width: 768px) {
+         line-height: 22px;
+         left: 1px;
+      }
+   }
+
+   &.active {
+      background: #1a66e7;
+      &:after {
+         content: "🌛";
+         transform: translateX(20px);
+      }
+      span {
+         transform: translateX(0);
+      }
+   }
+   span {
+      position: absolute;
+      z-index: 1;
+      margin: 2px;
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(#000, 0.1);
+      transform: translateX(20px);
+      transition: all 0.4s ease;
+   }
 }
 
 .clock {
-   border: solid 4px rgb(36, 36, 36);
-   box-shadow: inset 0 6px 18px rgba($color: #333, $alpha: 0.5);
-   width: 300px;
-   height: 300px;
+   border: solid 0.25rem var(--color-2);
+   box-shadow: inset 0 0.375rem 1.125rem rgba($color: #333, $alpha: 0.5);
+   width: 18.75rem;
+   height: 18.75rem;
+   margin: 1.25rem;
    border-radius: 100%;
    position: relative;
-   background-color: #fff;
-   filter: drop-shadow(0px 8px 10px rgba(36, 36, 36, 0.584));
+   background-color: var(--color-1);
+   filter: drop-shadow(0rem 0.5rem 0.625rem rgba(36, 36, 36, 0.584));
+   transition: all 0.3s linear;
+
    &::after {
       content: "";
-      width: calc(100% - 8px);
-      height: calc(100% - 8px);
+      width: calc(100% - 0.5rem);
+      height: calc(100% - 0.5rem);
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      border: solid 4px rgb(205, 205, 205);
-      box-shadow: inset 0 0 1px rgba(36, 36, 36, 0.61);
+      border: solid 0.25rem rgb(205, 205, 205);
+      box-shadow: inset 0 0 0.0625rem rgba(36, 36, 36, 0.61);
       border-radius: 100%;
    }
 }
 
 .dots {
    position: absolute;
-   width: calc(100% - 106px);
-   height: calc(100% - 106px);
-   top: 53px;
-   left: 53px;
-   right: 53px;
-   bottom: 53px;
+   width: calc(100% - 6.625rem);
+   height: calc(100% - 6.625rem);
+   top: 3.3125rem;
+   left: 3.3125rem;
+   right: 3.3125rem;
+   bottom: 3.3125rem;
    div {
       position: absolute;
       top: 0;
@@ -63,14 +144,14 @@ html {
       width: 50%;
       height: 50%;
       //background: rgba(208, 208, 208, 0.01);
-      //border: solid 1.008px rgba(143, 143, 143, 0.05);
+      //border: solid .063rem rgba(143, 143, 143, 0.05);
       transform-origin: 100% 100%;
       transform: rotate(45deg);
       &:after {
-         width: 1.75px;
-         height: 1.75px;
+         width: 0.109375rem;
+         height: 0.109375rem;
          content: "";
-         background: rgb(36, 36, 36);
+         background: var(--color-2);
          position: absolute;
          top: 0;
          left: 0;
@@ -79,8 +160,8 @@ html {
       }
       &:nth-child(5n + 1) {
          &:after {
-            width: 3.5px;
-            height: 3.5px;
+            width: 0.21875rem;
+            height: 0.21875rem;
          }
       }
    }
@@ -88,16 +169,16 @@ html {
 
 .hours-wrapper {
    position: absolute;
-   width: calc(100% - 116px);
-   height: calc(100% - 116px);
-   top: 58px;
-   left: 58px;
-   right: 58px;
-   bottom: 58px;
-   font-size: 28px;
+   width: calc(100% - 7.25rem);
+   height: calc(100% - 7.25rem);
+   top: 3.625rem;
+   left: 3.625rem;
+   right: 3.625rem;
+   bottom: 3.625rem;
+   font-size: 1.75rem;
    font-weight: 200;
    line-height: 50%;
-
+   color: var(--color-2);
    div {
       position: absolute;
       top: 0;
@@ -108,27 +189,27 @@ html {
       height: 50%;
       transform-origin: 100% 100%;
       //transform: rotate(105deg);
-      //border: solid 1.008px rgba(0, 128, 0, 0.269);
+      //border: solid .063rem rgba(0, 128, 0, 0.269);
 
       p {
          //transform: rotate(-105deg);
          transform-origin: 50% 50%;
          display: inline-block;
 
-         //border: solid 1.008px rgba(0, 255, 255, 0.434);
+         //border: solid .063rem rgba(0, 255, 255, 0.434);
       }
    }
 }
 
 .arrows {
    position: absolute;
-   width: calc(100% - 80px);
-   height: calc(100% - 80px);
-   top: 40px;
-   left: 40px;
-   right: 40px;
-   bottom: 40px;
-   filter: drop-shadow(0px 2px 3px rgba($color: #333, $alpha: 0.5));
+   width: calc(100% - 5rem);
+   height: calc(100% - 5rem);
+   top: 2.5rem;
+   left: 2.5rem;
+   right: 2.5rem;
+   bottom: 2.5rem;
+   filter: drop-shadow(0rem 0.125rem 0.1875rem rgba($color: #333, $alpha: 0.5));
    border-radius: 100%;
    &:after {
       content: "";
@@ -138,9 +219,9 @@ html {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgb(36, 36, 36);
-      width: 10px;
-      height: 10px;
+      background: var(--color-2);
+      width: 0.625rem;
+      height: 0.625rem;
       border-radius: 100%;
    }
 }
@@ -152,33 +233,33 @@ html {
    right: 50%;
    bottom: 50%;
    transform-origin: 30% 0%;
-   background: rgb(36, 36, 36);
+   background: var(--color-2);
 
    &-hour {
-      width: 3px;
+      width: 0.1875rem;
       height: 35%;
       transform: rotate(125deg);
    }
    &-minute {
-      width: 3px;
+      width: 0.1875rem;
       height: 48%;
       transform: rotate(225deg);
    }
    &-second {
-      width: 1.5px;
+      width: 0.09375rem;
       height: 50%;
       transform: rotate(325deg);
    }
 }
 
-.date-text {
+.city {
    position: absolute;
    left: 0;
    right: 0;
    top: 65%;
-   font-size: 18px;
+   font-size: 1.375rem;
    font-weight: 700;
-   color: rgb(36, 36, 36);
+   color: var(--color-2);
    text-align: center;
    font-family: "Italianno", cursive;
 }
