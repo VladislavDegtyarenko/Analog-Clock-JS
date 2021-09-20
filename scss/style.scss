@@ -1,296 +1,306 @@
-@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 :root {
-   --color-1: #fff;
-   --color-2: #242424;
+	--color-1: #fff;
+	--color-2: #242424;
 }
 
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html {
-   font-size: 16px;
-   font-size: 2.5vw;
+	font-size: 16px;
+	font-size: 2.5vw;
 }
 
 .container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   width: 100vw;
-   overflow: hidden;
-   position: relative;
-   background-color: rgb(3, 5, 8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	position: relative;
+	background-color: rgb(3, 5, 8);
 }
 
 .background {
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   height: 100%;
-   transition: all 0.3s linear;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s linear;
 
-   img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-   }
-   &.dark {
-      opacity: 0.15;
-   }
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&.dark {
+		opacity: 0.15;
+	}
 }
 
 .mode {
-   position: absolute;
-   top: 20px;
-   right: 20px;
-   margin: auto;
-   width: 42px;
-   height: 22px;
-   background: #f1f2f4;
-   border-radius: 20px;
-   cursor: pointer;
-   &:after {
-      content: "☀️";
-      position: absolute;
-      top: 0;
-      left: 4px;
-      font-size: 14px;
-      height: 22px;
-      line-height: 23px;
-      text-align: center;
-      transition: all 0.3s ease;
-      @media screen and (max-width: 768px) {
-         line-height: 22px;
-         left: 1px;
-      }
-   }
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	margin: auto;
+	width: 42px;
+	height: 22px;
+	background: #f1f2f4;
+	border-radius: 20px;
+	cursor: pointer;
+	&:after {
+		content: '☀️';
+		position: absolute;
+		top: 0;
+		left: 4px;
+		font-size: 14px;
+		height: 22px;
+		line-height: 23px;
+		text-align: center;
+		transition: all 0.3s ease;
+		@media screen and (max-width: 768px) {
+			line-height: 22px;
+			left: 1px;
+		}
+	}
 
-   &.active {
-      background: #1a66e7;
-      &:after {
-         content: "🌛";
-         transform: translateX(20px);
-      }
-      span {
-         transform: translateX(0);
-      }
-   }
-   span {
-      position: absolute;
-      z-index: 1;
-      margin: 2px;
-      display: block;
-      width: 18px;
-      height: 18px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 1px 3px rgba(#000, 0.1);
-      transform: translateX(20px);
-      transition: all 0.4s ease;
-   }
+	&.active {
+		background: #1a66e7;
+		&:after {
+			content: '🌛';
+			transform: translateX(20px);
+		}
+		span {
+			transform: translateX(0);
+		}
+	}
+	span {
+		position: absolute;
+		z-index: 1;
+		margin: 2px;
+		display: block;
+		width: 18px;
+		height: 18px;
+		background: white;
+		border-radius: 50%;
+		box-shadow: 0 1px 3px rgba(#000, 0.1);
+		transform: translateX(20px);
+		transition: all 0.4s ease;
+	}
 }
 
 .clock {
-   width: 300px;
-   height: 300px;
-   width: 75vh;
-   height: 75vh;
-   aspect-ratio: 1/1;
-   position: relative;
-   margin: 20px;
+	width: 300px;
+	height: 300px;
+	width: 75vh;
+	height: 75vh;
+	aspect-ratio: 1/1;
+	position: relative;
+	margin: 20px;
 
-   &__inner {
-      border: solid 4px var(--color-2);
-      box-shadow: inset 0 6px 18px rgba($color: #333, $alpha: 0.5);
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-      position: abs($number: 0);
-      background-color: var(--color-1);
-      filter: drop-shadow(0 8px 10px rgba(36, 36, 36, 0.584));
-      //transition: all 0.3s linear;
-   }
+	&__inner {
+		border: solid 4px var(--color-2);
+		box-shadow: inset 0 6px 18px rgba($color: #333, $alpha: 0.5);
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+		position: abs($number: 0);
+		background-color: var(--color-1);
+		filter: drop-shadow(0 8px 10px rgba(36, 36, 36, 0.584));
+		//transition: all 0.3s linear;
+	}
 }
 
 .dots {
-   position: absolute;
-   /*    width: calc(100% - 106px);
+	position: absolute;
+	/*    width: calc(100% - 106px);
    height: calc(100% - 106px); */
-   width: 63.7%;
-   height: 63.7%;
-   /*    top: 53px;
+	width: 63.7%;
+	height: 63.7%;
+	/*    top: 53px;
    left: 53px;
    right: 53px;
    bottom: 53px; */
-   top: 18.2%;
-   left: 18.2%;
-   right: 18.2%;
-   bottom: 18.2%;
-   div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 50%;
-      height: 50%;
-      //background: rgba(208, 208, 208, 0.01);
-      //border: solid 1.008px rgba(143, 143, 143, 0.05);
-      transform-origin: 100% 100%;
-      transform: rotate(45deg);
-      &:after {
-         /* 
+	top: 18.2%;
+	left: 18.2%;
+	right: 18.2%;
+	bottom: 18.2%;
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 50%;
+		height: 50%;
+		//background: rgba(208, 208, 208, 0.01);
+		//border: solid 1.008px rgba(143, 143, 143, 0.05);
+		transform-origin: 100% 100%;
+		transform: rotate(45deg);
+		&:after {
+			/* 
          width: 1.75px;
          height: 1.75px; */
-         width: 1.75%;
-         height: 1.75%;
-         content: "";
-         background: var(--color-2);
-         position: absolute;
-         top: 0;
-         left: 0;
-         transform: translate(-50%, -50%);
-         border-radius: 100%;
-      }
-      &:nth-child(5n + 1) {
-         &:after {
-            width: 3%;
-            height: 3%;
-         }
-      }
-   }
+			width: 1.75%;
+			height: 1.75%;
+			content: '';
+			background: var(--color-2);
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+			border-radius: 100%;
+		}
+		&:nth-child(5n + 1) {
+			&:after {
+				width: 3%;
+				height: 3%;
+			}
+		}
+	}
 }
 
 .hours-wrapper {
-   position: absolute;
-   /*    width: calc(100% - 116px);
+	position: absolute;
+	/*    width: calc(100% - 116px);
    height: calc(100% - 116px); */
-   width: 60.3%;
-   height: 60.3%;
-   top: 20%;
-   left: 20%;
-   right: 20%;
-   bottom: 20%;
-   font-size: 1.75em;
-   font-weight: 200;
-   line-height: 50%;
-   color: var(--color-2);
-   div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 50%;
-      height: 50%;
-      transform-origin: 100% 100%;
-      //transform: rotate(105deg);
-      //border: solid 1.008px rgba(0, 128, 0, 0.269);
+	width: 60.3%;
+	height: 60.3%;
+	top: 20%;
+	left: 20%;
+	right: 20%;
+	bottom: 20%;
+	font-size: 1.75em;
+	font-weight: 200;
+	line-height: 50%;
+	color: var(--color-2);
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 50%;
+		height: 50%;
+		transform-origin: 100% 100%;
+		//transform: rotate(105deg);
+		//border: solid 1.008px rgba(0, 128, 0, 0.269);
 
-      p {
-         //transform: rotate(-105deg);
-         transform-origin: 50% 50%;
-         display: inline-block;
+		p {
+			//transform: rotate(-105deg);
+			transform-origin: 50% 50%;
+			display: inline-block;
 
-         //border: solid 1.008px rgba(0, 255, 255, 0.434);
-      }
-   }
+			//border: solid 1.008px rgba(0, 255, 255, 0.434);
+		}
+	}
 }
 
 .arrows {
-   position: absolute;
-   /* width: calc(100% - 80px);
+	position: absolute;
+	/* width: calc(100% - 80px);
    height: calc(100% - 80px); */
-   width: 72.6%;
-   height: 72.6%;
-   /*   top: 40px;
+	width: 72.6%;
+	height: 72.6%;
+	/*   top: 40px;
    left: 40px;
    right: 40px;
    bottom: 40px; */
-   top: 13.7%;
-   left: 13.7%;
-   right: 13.7%;
-   bottom: 13.7%;
-   filter: drop-shadow(0px 2px 3px rgba($color: #333, $alpha: 0.5));
-   border-radius: 100%;
-   &:after {
-      content: "";
-      position: absolute;
-      margin: auto;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--color-2);
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-   }
+	top: 13.7%;
+	left: 13.7%;
+	right: 13.7%;
+	bottom: 13.7%;
+	filter: drop-shadow(0px 2px 3px rgba($color: #333, $alpha: 0.5));
+	border-radius: 100%;
+	&:after {
+		content: '';
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--color-2);
+		width: 10px;
+		height: 10px;
+		border-radius: 100%;
+	}
 }
 
 .arrow {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   right: 50%;
-   bottom: 50%;
-   transform-origin: 30% 0%;
-   background: var(--color-2);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	right: 50%;
+	bottom: 50%;
+	transform-origin: 30% 0%;
+	background: var(--color-2);
 
-   &-hour {
-      width: 0.75%;
-      height: 35%;
-      transform: rotate(125deg);
-   }
-   &-minute {
-      width: 0.75%;
-      height: 48%;
-      transform: rotate(225deg);
-   }
-   &-second {
-      width: 0.375%;
-      height: 50%;
-      transform: rotate(325deg);
-   }
+	&-hour {
+		width: 0.75%;
+		height: 35%;
+		transform: rotate(125deg);
+	}
+	&-minute {
+		width: 0.75%;
+		height: 48%;
+		transform: rotate(225deg);
+	}
+	&-second {
+		width: 0.375%;
+		height: 50%;
+		//transform: rotate(325deg);
+		//animation: rotateInf 4s linear infinite;
+	}
+}
+
+@keyframes rotateInf {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .city {
-   position: absolute;
-   left: 0;
-   right: 0;
-   top: 65%;
-   font-size: 1.25em;
-   font-weight: 700;
-   color: var(--color-2);
-   text-align: center;
-   font-family: "Italianno", cursive;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 65%;
+	font-size: 1.25em;
+	font-weight: 700;
+	color: var(--color-2);
+	text-align: center;
+	font-family: 'Italianno', cursive;
 }
 
 @media (max-width: 1200px) {
-   .hours-wrapper {
-      font-size: 2em;
-   }
+	.hours-wrapper {
+		font-size: 2em;
+	}
 }
 
 @media (max-width: 575px) {
-   .hours-wrapper {
-      font-size: 3em;
-   }
-   .clock {
-      width: 80vw;
-      height: 80vw;
-   }
-   .city {
-      font-size: 2.25rem;
-   }
+	.hours-wrapper {
+		font-size: 3em;
+	}
+	.clock {
+		width: 80vw;
+		height: 80vw;
+	}
+	.city {
+		font-size: 2.25rem;
+	}
 }
