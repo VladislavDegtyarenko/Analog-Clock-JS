@@ -222,6 +222,7 @@ html {
 	right: 13.7%;
 	bottom: 13.7%;
 	filter: drop-shadow(0px 2px 3px rgba($color: #333, $alpha: 0.5));
+	will-change: filter;
 	border-radius: 100%;
 	&:after {
 		content: '';
@@ -246,6 +247,7 @@ html {
 	bottom: 50%;
 	transform-origin: 30% 0%;
 	background: var(--color-2);
+	will-change: filter;
 
 	&-hour {
 		width: 0.75%;
